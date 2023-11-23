@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import Toggle from 'react-toggle';
 import "react-toggle/style.css"
 const Navbar = () => {
+  const [mode,setMode]=useState("lightTheme");
+  useEffect(()=>{
+    document.body.className=mode;
+
+  },[mode])
+  const handleModeClick=()=>{
+    (mode==="lightTheme")?(setMode("darkTheme")):(setMode("lightTheme"))
+
+  }
+  console.log(mode);
   return (
     <div className='navbar'>
         {/* logo */}
@@ -20,7 +30,7 @@ const Navbar = () => {
 
         {/* mode */}
         <div className="mode">
-          <Toggle/>         
+          <Toggle onClick={handleModeClick}/>         
         </div>
         {/* mode */}
 

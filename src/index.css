@@ -8,22 +8,26 @@ body{
   margin:0;
   padding:0;
 }
-/* .light_theme{ */
-  /* --background:rgb(240,240,240); */
-  /* --color:black; */
-  /* --cardBackground:white; */
-  /* --buttonBackground:none; */
-  /* --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-/* } */
-/* .dark_theme{ */
-  /* --background:#0F0F0F; */
-  /* --color:white; */
-  /* --buttonBackground:rgb(240,240,240); */
-  /* --buttonColor:#0F0F0F; */
-  /* --CardColor:black; */
-  /* --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-/*  */
-/* } */
+/* Dark and light theme */
+.lightTheme{
+  --background:whitesmoke;
+  --color:black;
+  --cardBackground:white;
+  --buttonBackground:none;
+  --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --searchColor: rgb(200,200,200)
+}
+.darkTheme{
+  --background:#0F0F0F;
+  --color:white;
+  --buttonBackground:rgb(240,240,240);
+  --buttonColor:#0F0F0F;
+  --CardColor:black;
+  --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --searchColor: rgb(240,240,240);
+
+}
+/* Dark and light theme */
 
 /* Navbar  */
 .navbar{
@@ -31,7 +35,7 @@ body{
   align-items: center;
   justify-content: space-between;
   height:8rem;
-  background-color:blueviolet;
+  background:var(--background);
   padding:0rem 6rem;
   
 }
@@ -42,13 +46,13 @@ body{
   list-style-type: none;
 }
 .list ul a{
-  color:white;
+  color:var(--color);
   text-decoration: none;
 }
 .search {
   border-radius: 12px;
-  padding:0.2rem 0.4rem;
-  background-color: white;
+  padding:0.3rem 0.4rem;
+  background-color: var(--searchColor);
 }
 .search input{
   background: none;
