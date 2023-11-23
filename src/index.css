@@ -66,7 +66,8 @@ body{
 .products{
   width:100vw;
   margin-top: 2rem;
-  /* max-width: 100%; */
+  /* to stop exceeding viewport width */
+  max-width: 100%;
 }
 
 .productsWrapper{
@@ -103,3 +104,31 @@ color:var(--color);
 }
 
 /* products Section */
+
+/* pagination */
+.pagination{
+  width:80vw;
+  margin:0 auto;
+  text-align: center;
+  /* display: flex; */
+  /* align-items: center; */
+}
+.paginationCounter{
+  margin :0rem 1rem;
+  cursor: pointer;
+  /* background-color: blueviolet; */
+  border-radius:50%;
+  padding:0.1rem 0.5rem
+}
+.next,.previous{
+  cursor: pointer;
+  font-size: 2rem;
+}
+#clicked{
+  background-color:aqua ;
+
+}
+#nclicked{
+  background-color: var(--background);
+}
+/* pagination */
