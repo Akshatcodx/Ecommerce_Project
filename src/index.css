@@ -1,0 +1,59 @@
+:root{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+}
+*{
+  margin:0;
+  padding:0;
+}
+/* .light_theme{ */
+  /* --background:rgb(240,240,240); */
+  /* --color:black; */
+  /* --cardBackground:white; */
+  /* --buttonBackground:none; */
+  /* --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+/* } */
+/* .dark_theme{ */
+  /* --background:#0F0F0F; */
+  /* --color:white; */
+  /* --buttonBackground:rgb(240,240,240); */
+  /* --buttonColor:#0F0F0F; */
+  /* --CardColor:black; */
+  /* --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+/*  */
+/* } */
+
+/* Navbar  */
+.navbar{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:8rem;
+  background-color:blueviolet;
+  padding:0rem 6rem;
+  
+}
+.list ul {
+  display: flex;
+  align-items: center;
+  gap:2rem;
+  list-style-type: none;
+}
+.list ul a{
+  color:white;
+  text-decoration: none;
+}
+.search {
+  border-radius: 12px;
+  padding:0.2rem 0.4rem;
+  background-color: white;
+}
+.search input{
+  background: none;
+  outline:none;
+  border:none;
+}
+
+/* Navbar */
