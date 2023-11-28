@@ -10,6 +10,7 @@ const Products = () => {
     useEffect(()=>{
         dispatch(fetchProducts())
     },[]);
+    let filteredProducts;   
     // pagination
     const itemsPerPage=(products.length/10);
     let rows=products.slice(page*itemsPerPage-itemsPerPage,page*itemsPerPage);
@@ -27,7 +28,7 @@ const Products = () => {
     // category filter
     if(category!=="all")
     {
-        let filteredProducts=products.filter((elem)=>{
+         filteredProducts=products.filter((elem)=>{
             return elem.category===category;
         
     })

@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* searchbar */}
 
         <div className="search">
-            <input type='search' placeholder='search' onChange={handleChange}></input>
+            <input type='search' placeholder='search' onChange={handleChange} value={search}></input>
         </div>
         {/* Searchbar */}
 

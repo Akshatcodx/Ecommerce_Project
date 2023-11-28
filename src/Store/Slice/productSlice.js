@@ -28,6 +28,7 @@ const productSlice = createSlice({
     },
     setCategory: (state, action) => {
       state.category = action.payload;
+      state.search = "";
     },
     setSearch: (state, action) => {
       state.search = action.payload;
