@@ -11,7 +11,9 @@ body{
 /* Dark and light theme */
 .lightTheme{
   --background:whitesmoke;
-  --color:black;
+  --background2:white;
+  --color2:white;
+  --color:black;  
   --cardBackground:white;
   --buttonBackground:none;
   --imageBoxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -20,6 +22,8 @@ body{
 .darkTheme{
   --background:#0F0F0F;
   --color:white;
+  --background2:black;
+--color2:white;
   --buttonBackground:rgb(240,240,240);
   --buttonColor:#0F0F0F;
   --CardColor:black;
@@ -132,3 +136,44 @@ color:var(--color);
   background-color: var(--background);
 }
 /* pagination */
+
+/* filter */
+.filterContainer{
+  margin-top: 2rem;
+  /* width:100vw; */
+  /* max-width: 100%; */
+  background-color: var(--background2);
+  color: var(--color);
+
+}
+.filterWrapper{
+  width:100vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* remove the property below and then use it */
+  /* justify-content: space-around; */
+  /* flex-wrap: wrap; */
+  /* overflow-x: scroll; */
+}
+.filterWrapper p{
+  white-space:nowrap;
+  background-color: var(--background2);
+  color: var(--color2);
+  padding:0.3rem 0.7rem;
+  margin:0px 0.3rem;
+  border-radius: 8px;
+  /* cursor: pointer; */
+  /* width:10%; */
+}
+.category{
+  cursor: pointer;
+  white-space:nowrap;
+background-color: var(--background);
+color: var(--color);
+padding:0.3rem 0.7rem;
+margin:0px 0.3rem;
+border-radius: 8px;
+}
+
+/* filter */

@@ -1,15 +1,26 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../Store/Slice/productSlice'
+import { Link } from 'react-router-dom';
 const Card = ({curProduct}) => {
+  const dispatch=useDispatch();
+  const {cart}=useSelector(state=>state.productSlice);
+// adding to cart
+  const add=()=>{
+     dispatch(addToCart(curProduct));
+  }
+  console.log(cart)
+  // adding to cart
   return (
     <div className='card'>
         <div className="image">
-         <img src={curProduct.images[0]}/>
+        <Link to={`/singleproduct/${curProduct.id}`}><img src={curProduct.images[0]}/></Link> 
         </div>
         <div className="info">
              <h3><i>{curProduct.title}</i></h3> 
              <p>{curProduct.description.slice(0,50)}</p>
              <h3>${curProduct.price}</h3>
-             <button>Add to Cart</button>
+             <button onClick={()=>{add()}}>Add to Cart</button>
         </div>
 
     </div>

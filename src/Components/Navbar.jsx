@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {Link} from "react-router-dom";
 import Toggle from 'react-toggle';
 import "react-toggle/style.css"
+import { setSearch } from '../Store/Slice/productSlice';
 const Navbar = () => {
   const [mode,setMode]=useState("lightTheme");
+  const dispatch=useDispatch();
+  const {search}=useSelector((state)=>state.productSlice);
   useEffect(()=>{
     document.body.className=mode;
-
   },[mode])
   const handleModeClick=()=>{
     (mode==="lightTheme")?(setMode("darkTheme")):(setMode("lightTheme"))
 
   }
+  // passing search query
+  const handleChange=(e)=>{
+    dispatch(setSearch(e.target.value))
+
+    
+
+  }
+  console.log(search);
+  // passing search query
   console.log(mode);
   return (
     <div className='navbar'>
@@ -24,7 +36,7 @@ const Navbar = () => {
         {/* searchbar */}
 
         <div className="search">
-            <input type='search' placeholder='search'></input>
+            <input type='search' placeholder='search' onChange={handleChange}></input>
         </div>
         {/* Searchbar */}
 

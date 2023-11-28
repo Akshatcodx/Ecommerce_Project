@@ -8,11 +8,31 @@ const STATUS = Object.freeze({
 const initialState = {
   products: [],
   status: STATUS.LOADING,
+  category: "all",
+  search: "",
+  cart: [],
 };
 const productSlice = createSlice({
   name: "productSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state, action) => {
+      const index = state.cart.findIndex((elem) => {
+        return elem.id === action.payload.id;
+      });
+      if (index >= 0) {
+        state.cart[index].quantity = state.cart[index].quantity + 1;
+      } else {
+        state.cart.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    setCategory: (state, action) => {
+      state.category = action.payload;
+    },
+    setSearch: (state, action) => {
+      state.search = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state, action) => {
       state.status = STATUS.LOADING;
@@ -39,3 +59,4 @@ export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
   }
 });
 export default productSlice.reducer;
+export const { setCategory, addToCart, setSearch } = productSlice.actions;
