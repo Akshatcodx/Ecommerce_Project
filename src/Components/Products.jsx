@@ -35,18 +35,18 @@ const Products = () => {
     }
     
      // search filter
-    //  if(search!=="")
-    //   {
-    //    let ItemToSearch=search.toLowerCase().split(" ").join("");
-    //    const temp=rows.filter(({title})=>{  
-    //    let idleTitle=title.split(" ").join("");   
-    //    return (idleTitle.toLowerCase().includes(ItemToSearch));
-            // }
-//    )
-//    filteredProducts=temp;
-//    console.log("item to show",temp)
-//    rows=temp;
-//  }
+     if(search!=="")
+      {
+       let ItemToSearch=search.toLowerCase().split(" ").join("");
+       const temp=rows.filter(({title})=>{  
+       let idleTitle=title.split(" ").join("");   
+       return (idleTitle.toLowerCase().includes(ItemToSearch));
+            }
+   )
+   filteredProducts=temp;
+   console.log("item to show",temp)
+   rows=temp;
+ }
  // search filter
     
   return (
