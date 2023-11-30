@@ -5,7 +5,7 @@ import Card from './Card';
 const Products = () => {
     const [page,setPage]=useState(1);
     const {products,category,search}=useSelector((state)=>state.productSlice);
-     console.log(page);
+     console.log(products);
      const dispatch=useDispatch();
     useEffect(()=>{
         dispatch(fetchProducts())

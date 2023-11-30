@@ -9,7 +9,7 @@ const Card = ({curProduct}) => {
   const add=()=>{
      dispatch(addToCart(curProduct));
   }
-  console.log(cart)
+  console.log("this is cart",cart)
   // adding to cart
   return (
     <div className='card'>

@@ -177,3 +177,12 @@ border-radius: 8px;
 }
 
 /* filter */
+.info button{
+  border:none;
+  outline:none;
+  background-color:blueviolet;
+  border-radius: 18px;
+  padding: 5px 9px;
+  cursor: pointer;
+
+}

@@ -21,7 +21,11 @@ const productSlice = createSlice({
         return elem.id === action.payload.id;
       });
       if (index >= 0) {
-        state.cart[index].quantity = state.cart[index].quantity + 1;
+        if (state.cart[index].quantity >= 5) {
+          alert(`cannot add more than 10 items of ${action.payload.title} `);
+        } else {
+          state.cart[index].quantity = state.cart[index].quantity + 1;
+        }
       } else {
         state.cart.push({ ...action.payload, quantity: 1 });
       }
