@@ -4,12 +4,12 @@ import { addToCart } from '../Store/Slice/productSlice'
 import { Link } from 'react-router-dom';
 const Card = ({curProduct}) => {
   const dispatch=useDispatch();
-  const {cart}=useSelector(state=>state.productSlice);
+  // const {cart}=useSelector(state=>state.productSlice);
 // adding to cart
   const add=()=>{
      dispatch(addToCart(curProduct));
   }
-  console.log("this is cart",cart)
+  // console.log("this is cart",cart)
   // adding to cart
   return (
     <div className='card'>
