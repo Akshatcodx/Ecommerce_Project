@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from "react-router-dom";
 import Toggle from 'react-toggle';
 import "react-toggle/style.css"
-import { setSearch } from '../Store/Slice/productSlice';
+import { getTotal, setSearch } from '../Store/Slice/productSlice';
+import { FaCartShopping } from "react-icons/fa6";
 const Navbar = () => {
   const [mode,setMode]=useState("lightTheme");
   const dispatch=useDispatch();
-  const {search}=useSelector((state)=>state.productSlice);
+  const {search,totalQuantity}=useSelector((state)=>state.productSlice);
+  dispatch(getTotal());
   useEffect(()=>{
     document.body.className=mode;
   },[mode])
@@ -50,7 +52,19 @@ const Navbar = () => {
         <div className="list">
             <ul>
                 <li><Link to="/products">Products</Link></li>
-                <li><Link to="/cart">Cart</Link></li>
+                <li className='cartCounter'>
+                 <div >
+                
+              {/* <BsCart className='cartIcon'/> */}
+             <Link to="/cart"> <FaCartShopping className='cartIcon'/></Link> 
+   
+                  </div>
+              <p className='cartCount'>
+                {
+                  (totalQuantity)?totalQuantity:""
+                }
+              </p>
+ </li>
                 <li><Link to="/wishlist"> Wishlist</Link></li>
             </ul>
 

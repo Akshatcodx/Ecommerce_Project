@@ -11,8 +11,6 @@ const Summary = () => {
  <p style={{margin:"6px"}}><i>Total Quantity: {totalQuantity}</i></p>
  <p><i>Total Price:$ {totalPrice}</i></p>
       </div>
-
-
     </div>
   )
 }

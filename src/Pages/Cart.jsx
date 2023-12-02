@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 import { clearCart, getTotal } from '../Store/Slice/productSlice'
 
 const Cart = () => {
-    const {cart}=useSelector((state)=>state.productSlice)
+    const {cart}=useSelector((state)=>state.productSlice);
     console.log("this is cart",cart);
     const dispatch=useDispatch();
-    dispatch(getTotal());
+   
     
   return (
     <div className="cartPage">
