@@ -307,11 +307,11 @@ color:var(--color);
 }
 
 /* cart page */
-/* #filterClicked{ */
-  /* background-color: blueviolet; */
-  /* border-radius: 8px; */
-  /* padding:0.7rem; */
-  /* color:var(--color); */
-  /* cursor:pointer; */
-/*  */
-/* } */
+#filterClicked{
+  background-color: blueviolet;
+  border-radius: 8px;
+  padding:0.7rem;
+  color:var(--color);
+  cursor:pointer;
+
+}

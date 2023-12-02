@@ -25,7 +25,7 @@ const Filter = () => {
                 categories.map((curCategory)=>{
                     return (
                       
-                        <p className='category' onClick={()=>{filterCategory(curCategory)}}>{curCategory}</p>
+                        <p id={(curCategory===category)?"filterClicked":""} className='category' onClick={()=>{filterCategory(curCategory)}}>{curCategory}</p>
                       
                     )
 
