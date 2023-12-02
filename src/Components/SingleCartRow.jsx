@@ -1,9 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { decreaseQuantity, increaseQuantity, removeFromCart } from '../Store/Slice/productSlice';
+import { decreaseQuantity, getTotal, increaseQuantity, removeFromCart } from '../Store/Slice/productSlice';
 import { RiDeleteBin5Fill } from "react-icons/ri";
 const SingleCartRow = ({cartItem}) => {
   const dispatch=useDispatch();
+ 
   return (
    <tr>
      <td>
@@ -16,7 +17,7 @@ const SingleCartRow = ({cartItem}) => {
         </div>
       </div>
      </td>
-     <td>{cartItem.price}</td>
+     <td><i>${cartItem.price}</i></td>
      <td>
      <div className="quantity">
       <span  onClick={()=>{dispatch(decreaseQuantity(cartItem))}}>➖</span>

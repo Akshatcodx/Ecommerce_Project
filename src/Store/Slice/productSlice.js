@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-const STATUS = Object.freeze({
+export const STATUS = Object.freeze({
   IDLE: "IDLE",
   ERROR: "ERROR",
   LOADING: "LOADING",
@@ -11,6 +11,8 @@ const initialState = {
   category: "all",
   search: "",
   cart: [],
+  totalQuantity: 0,
+  totalPrice: 0,
 };
 const productSlice = createSlice({
   name: "productSlice",
@@ -67,6 +69,23 @@ const productSlice = createSlice({
       });
       state.cart = temp;
     },
+    getTotal: (state, action) => {
+      const { tq, tp } = state.cart.reduce(
+        (accum, elem) => {
+          const { price, quantity } = elem;
+          let product = price * quantity;
+          accum.tq = accum.tq + quantity;
+          accum.tp = accum.tp + product;
+          return accum;
+        },
+        { tq: 0, tp: 0 }
+      );
+      state.totalQuantity = tq;
+      state.totalPrice = tp;
+    },
+    clearCart: (state, action) => {
+      state.cart = [];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state, action) => {
@@ -101,4 +120,6 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeFromCart,
+  getTotal,
+  clearCart,
 } = productSlice.actions;

@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../Store/Slice/productSlice';
 import Card from './Card';
 const Products = () => {
+    // const dispatch=useDispatch();
+
+    // 
+    // useEffect(()=>{
+        //   dispatch(fetchProducts())
+    // },[])
     const [page,setPage]=useState(1);
-    const {products,category,search}=useSelector((state)=>state.productSlice);
+    const {products,category,search,status}=useSelector((state)=>state.productSlice);
      console.log(products);
-     const dispatch=useDispatch();
-    useEffect(()=>{
-        dispatch(fetchProducts())
-    },[]);
     let filteredProducts;   
     // pagination
     const itemsPerPage=(products.length/10);
@@ -94,6 +96,8 @@ const Products = () => {
     ):
     ""
     }
+
+    
     </div>
   )
 }
