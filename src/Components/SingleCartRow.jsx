@@ -1,5 +1,8 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { decreaseQuantity, increaseQuantity } from '../Store/Slice/productSlice';
 const SingleCartRow = ({cartItem}) => {
+  const dispatch=useDispatch();
   return (
    <tr>
      <td>
@@ -15,10 +18,10 @@ const SingleCartRow = ({cartItem}) => {
      <td>{cartItem.price}</td>
      <td>
      <div className="quantity">
-      <button>-</button>
+      <span  onClick={()=>{dispatch(decreaseQuantity(cartItem))}}>➖</span>
       <p>{cartItem.quantity}</p>
 
-      <button>+</button>
+      <span onClick={()=>{dispatch(increaseQuantity(cartItem))}}>➕</span>
 
      </div>
       </td>

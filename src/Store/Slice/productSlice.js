@@ -37,6 +37,30 @@ const productSlice = createSlice({
     setSearch: (state, action) => {
       state.search = action.payload;
     },
+    increaseQuantity: (state, action) => {
+      const index = state.cart.findIndex((curElem) => {
+        return curElem.id === action.payload.id;
+      });
+      if (index >= 0) {
+        if (state.cart[index].quantity < 4) {
+          state.cart[index].quantity += 1;
+        } else {
+          alert(`cannot add more than 4 items of  ${action.payload.title} `);
+        }
+      }
+    },
+    decreaseQuantity: (state, action) => {
+      const index = state.cart.findIndex((curElem) => {
+        return curElem.id === action.payload;
+      });
+      if (index >= 0) {
+        if (state.cart[index].quantity > 0) {
+          state.cart[index].quantity -= 1;
+        } else {
+          alert("cannot ");
+        }
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state, action) => {
@@ -64,4 +88,10 @@ export const fetchProducts = createAsyncThunk("fetchProducts", async () => {
   }
 });
 export default productSlice.reducer;
-export const { setCategory, addToCart, setSearch } = productSlice.actions;
+export const {
+  setCategory,
+  addToCart,
+  setSearch,
+  increaseQuantity,
+  decreaseQuantity,
+} = productSlice.actions;
