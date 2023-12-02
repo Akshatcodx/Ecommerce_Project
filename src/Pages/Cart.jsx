@@ -44,7 +44,9 @@ const Cart = () => {
   </div>
             </div>
         </div>
+   
         <Summary/>
+       
 
     </div>
   )

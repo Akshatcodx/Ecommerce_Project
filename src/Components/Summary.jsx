@@ -6,9 +6,11 @@ const Summary = () => {
     console.log(totalQuantity,totalPrice)
   return (
     <div className='summary'>
-        <h3>Summary</h3>
-        <p style={{margin:"6px"}}><i>Total Quantity: {totalQuantity}</i></p>
-        <p><i>Total Price:$ {totalPrice}</i></p>
+      <div className="sum">
+         <h3>Summary</h3>
+ <p style={{margin:"6px"}}><i>Total Quantity: {totalQuantity}</i></p>
+ <p><i>Total Price:$ {totalPrice}</i></p>
+      </div>
 
 
     </div>
