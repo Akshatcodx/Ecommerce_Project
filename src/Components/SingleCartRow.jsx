@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { decreaseQuantity, increaseQuantity } from '../Store/Slice/productSlice';
+import { decreaseQuantity, increaseQuantity, removeFromCart } from '../Store/Slice/productSlice';
+import { RiDeleteBin5Fill } from "react-icons/ri";
 const SingleCartRow = ({cartItem}) => {
   const dispatch=useDispatch();
   return (
@@ -25,7 +26,7 @@ const SingleCartRow = ({cartItem}) => {
 
      </div>
       </td>
-     <td><button>Remove from cart</button></td>
+     <td><span onClick={()=>{dispatch(removeFromCart(cartItem.id))}} style={{cursor:"pointer"}}><RiDeleteBin5Fill color='blueViolet'/></span></td>
 
    </tr>
   )

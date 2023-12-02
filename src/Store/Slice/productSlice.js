@@ -61,6 +61,12 @@ const productSlice = createSlice({
         }
       }
     },
+    removeFromCart: (state, action) => {
+      const temp = state.cart.filter((elem) => {
+        return elem.id !== action.payload;
+      });
+      state.cart = temp;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state, action) => {
@@ -94,4 +100,5 @@ export const {
   setSearch,
   increaseQuantity,
   decreaseQuantity,
+  removeFromCart,
 } = productSlice.actions;

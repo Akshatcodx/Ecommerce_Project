@@ -199,7 +199,8 @@ border-radius: 8px;
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  padding:0px 2rem
+  padding:0px 2rem;
+  gap:2rem;
 
 }
 .item img{
@@ -217,6 +218,9 @@ border-radius: 8px;
 .tableContainer table tr{
   background-color: var(--background);
 
+}
+.tableContainer table td{
+  padding:1rem
 }
 .tableContainer table th{
   background-color: blueviolet;
