@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import {AiFillStar} from "react-icons/";
 import {FaStar,FaStarHalfAlt,FaRegStar} from "react-icons/fa";
 const Star = ({stars}) => {
@@ -22,6 +22,7 @@ const Star = ({stars}) => {
     })
   return (
     <div>
+        
         Rating:
         {ratingStars}
    </div>

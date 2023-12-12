@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+Login.jsx
+Register.jsx
+useDebounce.jsx
+schemas/
+
 
 # Editor directories and files
 .vscode/*

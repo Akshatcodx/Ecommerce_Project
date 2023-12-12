@@ -20,7 +20,7 @@ const Card = ({curProduct}) => {
              <h3><i>{curProduct.title}</i></h3> 
              <p>{curProduct.description.slice(0,50)}</p>
              <h3>${curProduct.price}</h3>
-             <button onClick={()=>{add()}}>Add to Cart</button>
+             <button onClick={()=>{add()}} style={{boxShadow:"3px 2px black"}}>Add to Cart</button>
         </div>
 
     </div>

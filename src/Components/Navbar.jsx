@@ -14,15 +14,13 @@ const Navbar = () => {
     document.body.className=mode;
   },[mode])
   const handleModeClick=()=>{
+    
     (mode==="lightTheme")?(setMode("darkTheme")):(setMode("lightTheme"))
 
   }
   // passing search query
   const handleChange=(e)=>{
-    dispatch(setSearch(e.target.value))
-
-    
-
+    dispatch(setSearch(e.target.value));
   }
   console.log(search);
   // passing search query
@@ -31,7 +29,7 @@ const Navbar = () => {
     <div className='navbar'>
         {/* logo */}
         <div className="logo">
-         <h1><Link to="/">ECart</Link></h1>
+         <h1><Link to="/products">ECart</Link></h1>
         </div>
         {/* logo */}
 
@@ -43,7 +41,8 @@ const Navbar = () => {
         {/* Searchbar */}
 
         {/* mode */}
-        <div className="mode">
+        <div className="mode" >
+        {(mode==="darkTheme")?<p>Dark Theme</p>:<p>Light Theme</p>}
           <Toggle onClick={handleModeClick}/>         
         </div>
         {/* mode */}
@@ -51,12 +50,13 @@ const Navbar = () => {
         {/* list */}
         <div className="list">
             <ul>
-                <li><Link to="/products">Products</Link></li>
+               
                 <li className='cartCounter'>
                  <div >
                 
               {/* <BsCart className='cartIcon'/> */}
              <Link to="/cart"> <FaCartShopping className='cartIcon'/></Link> 
+             
    
                   </div>
               <p className='cartCount'>
@@ -65,7 +65,6 @@ const Navbar = () => {
                 }
               </p>
  </li>
-                <li><Link to="/wishlist"> Wishlist</Link></li>
             </ul>
 
         </div>

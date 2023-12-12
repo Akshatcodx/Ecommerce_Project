@@ -12,6 +12,9 @@ const Cart = () => {
    
     
   return (
+    <div>
+        {
+            (cart.length>0)?(
     <div className="cartPage">
         {/* <Navbar/> */}
         <div className="cart">
@@ -44,11 +47,22 @@ const Cart = () => {
   </div>
             </div>
         </div>
+        
+      
    
-        <Summary/>
+   <Summary/> 
        
 
+    </div>    
+     ):(
+        <div className="error" style={{textAlign:"center"}}>
+            <h1 style={{marginBottom:"2rem"}}>Your cart Is Currently empty</h1>
+           <Link to="/products" style={{textDecoration:"none"}}><span >Go Back to shopping</span></Link> 
+       </div>
+     )}
+
     </div>
+   
   )
 }
 
